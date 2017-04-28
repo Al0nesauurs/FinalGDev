@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
 
 
     //Animator anim;                              // Reference to the animator component.
-    GameObject player;                          // Reference to the player GameObject.
+	GameObject player;                          // Reference to the player GameObject.
     GameObject playerarm;
     PlayerController playerctl;               // Reference to the player's health.
     LionController lionctl;
@@ -19,9 +19,9 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+		player = GameObject.Find("Player(Clone)");
         playerarm = GameObject.Find("PlayerArm");
-        playerctl = player.GetComponent<PlayerController>();
+		playerctl = player.GetComponent<PlayerController>();
         lionctl = GetComponent<LionController>();
         bossctrl = GetComponent<BossController>();
         //anim = GetComponent<Animator>();

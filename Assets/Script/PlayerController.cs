@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     private bool CanWalk = true;
     private bool CanJump = true;
@@ -20,11 +21,11 @@ public class PlayerController : MonoBehaviour
     public WeaponNameController WeaponNameControl;
     public Camera Tps;
     public Camera Fps;
-    public Slider healthSlider;
+    //public Slider healthSlider;
 	//public Image damageImage;
 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 	private double timer = 1.0;
-	public Image Heart;
+	//public Image Heart;
 	public AudioSource pause;
 	public AudioSource normalsound;
 	AudioSource soundEffect;
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+		if (!isLocalPlayer) {
+			return;
+		} else {
+			GameObject.Find ("OfflineCam").GetComponent<Camera> ().enabled = false;
+		}
         //Mouse rotate control
         CanJump = IsGrounded();
 
@@ -156,17 +162,17 @@ public class PlayerController : MonoBehaviour
 			}
 			if (PlayerHealth < 50) 
 			{
-				Heart.GetComponent<Canvas>().enabled = false;
+				GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = false;
 			}
 		} 
 		else if (timer > 0) 
 		{
-			Heart.GetComponent<Canvas>().enabled = true;
+			GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = true;
 		}
 
         if (PlayerHealth <= 0)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
             GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
         }
@@ -181,8 +187,14 @@ public class PlayerController : MonoBehaviour
 		{
 			soundEffect.PlayOneShot (liondeath, 0.7F);
 		}
-        healthSlider.value = PlayerHealth;
+//        healthSlider.value = PlayerHealth;
+		GameObject.Find ("HealthBar").GetComponent<Slider> ().value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
+		if (PlayerHealth == 0) 
+		{
+			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
+			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
+		}
 
     }
 
