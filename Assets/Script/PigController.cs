@@ -22,12 +22,13 @@ public class PigController : MonoBehaviour
     void Start()
     {
 		audio = GetComponent<AudioSource>();
-        playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
+//        playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
+		playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
         if (running)
         {
             run(trun += Time.deltaTime);
