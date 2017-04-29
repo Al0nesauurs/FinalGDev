@@ -28,6 +28,7 @@ public class PigController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
         if (running)
         {
             run(trun += Time.deltaTime);

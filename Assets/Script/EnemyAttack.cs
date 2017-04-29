@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player(Clone)");
         playerarm = GameObject.Find("PlayerArm");
         playerctl = player.GetComponent<PlayerController>();
         lionctl = GetComponent<LionController>();

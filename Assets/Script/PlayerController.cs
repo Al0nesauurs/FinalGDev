@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     private bool CanWalk = true;
     private bool CanJump = true;
     private bool usingitem = false;
+    private bool HaveGun = false;
     public static bool CursorResume = true;
     public static bool canrightclick = true;
     private float distToGround;
@@ -21,11 +23,11 @@ public class PlayerController : MonoBehaviour
     public WeaponNameController WeaponNameControl;
     public Camera Tps;
     public Camera Fps;
-    public Slider healthSlider;
+    //public Slider healthSlider;
 	//public Image damageImage;
 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 	private double timer = 1.0;
-	public Image Heart;
+	//public Image Heart;
 	public AudioSource pause;
 	public AudioSource normalsound;
 	AudioSource soundEffect;
@@ -55,15 +57,36 @@ public class PlayerController : MonoBehaviour
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Update()
     {
+        CheckIfLocal();
+        CheckHaveGun();
 		CheckTakeItem();
 		KeyboardControl();
 		MouseControl();
 		UIControl();
 
     }
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-	public void MouseControl()
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void CheckHaveGun()
+    {
+        if (HaveGun == false)
+        {
+            WeaponNameController.weaponname = "pistol";
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void CheckIfLocal()
+    {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
+        else
+        {
+            GameObject.Find("OfflineCam").GetComponent<Camera>().enabled = false;
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void MouseControl()
 	{
 		mouseInputY += Input.GetAxis("Mouse X") * MouseSpeed * Time.deltaTime * 20;
 		mouseInputX -= Input.GetAxis("Mouse Y") * MouseSpeed * Time.deltaTime * 20;
@@ -157,17 +180,17 @@ public class PlayerController : MonoBehaviour
 			}
 			if (PlayerHealth < 50) 
 			{
-				Heart.GetComponent<Canvas>().enabled = false;
-			}
-		} 
+                GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = false;
+            }
+        } 
 		else if (timer > 0) 
 		{
-			Heart.GetComponent<Canvas>().enabled = true;
-		}
+            GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = true;
+        }
 
-		if (PlayerHealth <= 0)
+        if (PlayerHealth <= 0)
 		{
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
 			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
 			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
 		}
@@ -195,8 +218,14 @@ public class PlayerController : MonoBehaviour
 		{
 			soundEffect.PlayOneShot (liondeath, 0.7F);
 		}
-        healthSlider.value = PlayerHealth;
+        //healthSlider.value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
+        GameObject.Find("HealthBar").GetComponent<Slider>().value = PlayerHealth;
+        if (PlayerHealth == 0) 
+		{
+			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
+			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
+		}
 
     }
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
