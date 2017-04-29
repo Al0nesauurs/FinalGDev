@@ -9,6 +9,7 @@ public class PlayerController : NetworkBehaviour
 {
     private bool CanWalk = true;
     private bool CanJump = true;
+	private bool HaveGun = false;
     private bool usingitem = false;
     public static bool CursorResume = true;
     public static bool canrightclick = true;
@@ -33,6 +34,7 @@ public class PlayerController : NetworkBehaviour
 
 
 
+
     void Start()
     {
         CanWalk = true;
@@ -47,6 +49,7 @@ public class PlayerController : NetworkBehaviour
         Fps.enabled = false;
         distToGround = GameObject.Find("LegRight").GetComponent<Collider>().bounds.extents.y;
         GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = false;
+		//WeaponNameController.weaponname = "pistol";
 
     }
 
@@ -56,9 +59,14 @@ public class PlayerController : NetworkBehaviour
 			return;
 		} else {
 			GameObject.Find ("OfflineCam").GetComponent<Camera> ().enabled = false;
+
 		}
         //Mouse rotate control
         CanJump = IsGrounded();
+		if (HaveGun == false) {
+			WeaponNameController.weaponname = "pistol";
+			HaveGun = true;
+		}
 
         mouseInputY += Input.GetAxis("Mouse X") * MouseSpeed * Time.deltaTime * 20;
         mouseInputX -= Input.GetAxis("Mouse Y") * MouseSpeed * Time.deltaTime * 20;

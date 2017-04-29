@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 87e21a3750065a349a3c3ccc28727457
-timeCreated: 1488107745
+timeCreated: 1493426622
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Pistol: {fileID: 1060191999786558, guid: 36f7ba70c44d5674dbc4a8c062482b47, type: 2}
+  - MachineGun: {fileID: 1175940408574736, guid: 9cd3a257b68a99a4fa16a14e385b0b6c,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
