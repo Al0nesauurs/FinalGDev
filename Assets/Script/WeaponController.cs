@@ -21,6 +21,11 @@ public class WeaponController : MonoBehaviour {
     public AudioClip MachinegunSoundR;
     private AudioSource source;
     //end sound part
+
+    private GameObject muzzleFlash;
+    private ParticleSystem flash;
+
+
     void Start () {
         ammo = 0;
         t = 0;
@@ -93,6 +98,9 @@ public class WeaponController : MonoBehaviour {
             {
                 source.PlayOneShot(HandgunSound, 1F);
                 Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                muzzleFlash = GameObject.Find("Muzzle Flash p");
+                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                flash.Play();
                 ammo--;
             }
             if(ammo==0)
@@ -107,6 +115,9 @@ public class WeaponController : MonoBehaviour {
             {
                 source.PlayOneShot(MachinegunSound, 1F);
                 Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                muzzleFlash = GameObject.Find("Muzzle Flash m");
+                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                flash.Play();
                 ammo--;
             }
             if (ammo == 0)
