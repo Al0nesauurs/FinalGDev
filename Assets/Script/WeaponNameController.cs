@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class WeaponNameController : MonoBehaviour
+using UnityEngine.Networking;
+public class WeaponNameController : NetworkBehaviour
 {
     public GameObject Pistol;
     public GameObject MachineGun;
@@ -18,7 +19,7 @@ public class WeaponNameController : MonoBehaviour
         weaponname = "hand";
     }
 	void Update()
-	{
+	{   
         if (fix&&weaponname!="hand")
         {
             if (weaponname == "pistol" || weaponname == "pistol(Clone)")
@@ -45,6 +46,7 @@ public class WeaponNameController : MonoBehaviour
         if(weaponname=="pistol" && Input.GetKeyDown(KeyCode.G)|| weaponname == "pistol(Clone)" && Input.GetKeyDown(KeyCode.G) ||
             weaponname == "machinegun" && Input.GetKeyDown(KeyCode.G) || weaponname == "machinegun(Clone)"&& Input.GetKeyDown(KeyCode.G))
         {
+                PlayerController.HaveGun = true;
 				PlayerController.Cantakeitem = false;
                 GameObject.Find("Crosshair").GetComponent<Text>().text = "+";
                 PlayerController.canrightclick = true;

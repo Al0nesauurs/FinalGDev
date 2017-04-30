@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PigController : MonoBehaviour
+public class PigController : NetworkBehaviour
 {
     Transform playerarm;
     float trun = 0;
@@ -22,12 +23,15 @@ public class PigController : MonoBehaviour
     void Start()
     {
 		audio = GetComponent<AudioSource>();
-        playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(isLocalPlayer)
+        {
+            return;
+        }
         playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
         if (running)
         {

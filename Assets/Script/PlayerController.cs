@@ -10,7 +10,7 @@ public class PlayerController : NetworkBehaviour
     private bool CanWalk = true;
     private bool CanJump = true;
     private bool usingitem = false;
-    private bool HaveGun = false;
+    static public bool HaveGun = false;
     public static bool CursorResume = true;
     public static bool canrightclick = true;
     private float distToGround;
@@ -58,11 +58,23 @@ public class PlayerController : NetworkBehaviour
     void Update()
     {
         CheckIfLocal();
-        CheckHaveGun();
-		CheckTakeItem();
-		KeyboardControl();
-		MouseControl();
-		UIControl();
+        if (!isLocalPlayer)
+        {
+            Tps.enabled = false;
+            Fps.enabled = false;
+            return;
+        }
+        else
+        {
+            CheckHaveGun();
+            CheckTakeItem();
+            if (PlayerHealth > 0)
+            {
+                KeyboardControl();
+                MouseControl();
+            }
+            UIControl();
+        }
 
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,14 +88,9 @@ public class PlayerController : NetworkBehaviour
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void CheckIfLocal()
     {
-        if(!isLocalPlayer)
-        {
-            return;
-        }
-        else
-        {
-            GameObject.Find("OfflineCam").GetComponent<Camera>().enabled = false;
-        }
+       
+        GameObject.Find("OfflineCam").GetComponent<Camera>().enabled = false;
+        
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void MouseControl()
@@ -106,7 +113,8 @@ public class PlayerController : NetworkBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Mouse0)&&Time.timeScale == 1)
 		{
-			WeaponControl.CheckWeapon();
+            Debug.Log("SHOOTING");
+			WeaponControl.CmdCheckWeapon();
 		}
 
 	}
@@ -117,12 +125,12 @@ public class PlayerController : NetworkBehaviour
 		CanJump = IsGrounded();
 		if (Input.GetAxis("Horizontal") != 0 && CanWalk)
 		{
-			gameObject.transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * 1f * force);
+			transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * 1f * force);
 		}
 
 		if (Input.GetAxis("Vertical") != 0 && CanWalk)
 		{
-			gameObject.transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 1f * force);
+			transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 1f * force);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space) && CanJump && Time.timeScale == 1)
@@ -180,18 +188,20 @@ public class PlayerController : NetworkBehaviour
 			}
 			if (PlayerHealth < 50) 
 			{
-                GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = false;
+                GameObject.Find("Heart").GetComponent<Canvas>().enabled = false;
             }
         } 
 		else if (timer > 0) 
 		{
-            GameObject.Find("HeartImage").GetComponent<Canvas>().enabled = true;
+            GameObject.Find("Heart").GetComponent<Canvas>().enabled = true;
         }
 
         if (PlayerHealth <= 0)
 		{
-			//Time.timeScale = 0;
-			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
+            //Time.timeScale = 0;
+            Cursor.visible = enabled; 
+            GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
+            GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
 			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
 		}
 	}
@@ -201,7 +211,6 @@ public class PlayerController : NetworkBehaviour
 	{
 		if (Cantakeitem == false) {
 			WaitTime -= Time.deltaTime;
-			Debug.Log ("Wait drop time = " + WaitTime);
 			if (WaitTime < 0) 
 			{
 				PlayerController.Cantakeitem = true;

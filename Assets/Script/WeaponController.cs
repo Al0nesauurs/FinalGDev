@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class WeaponController : MonoBehaviour {
+public class WeaponController : NetworkBehaviour {
 
     public GameObject Bullet;
     public Transform BulletSpawn;
@@ -38,7 +39,9 @@ public class WeaponController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		BulletSpawn = GameObject.Find ("BulletSpawn").transform;
+        if (isLocalPlayer)
+            BulletSpawn = GameObject.Find("BulletSpawn").transform;
+
 
         if (startReload)
         {
@@ -85,7 +88,9 @@ public class WeaponController : MonoBehaviour {
         }
 
     }
-    public void CheckWeapon()
+
+  
+    public void CmdCheckWeapon()
     {
         Debug.Log("CheckWEapon" + gameObject.name);
         if(gameObject.name=="hand")
@@ -97,10 +102,11 @@ public class WeaponController : MonoBehaviour {
             if (ammo > 0)
             {
                 source.PlayOneShot(HandgunSound, 1F);
-                Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                GameObject bullet =(GameObject)Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
                 muzzleFlash = GameObject.Find("Muzzle Flash p");
                 flash = muzzleFlash.GetComponent<ParticleSystem>();
                 flash.Play();
+                NetworkServer.Spawn(bullet);
                 ammo--;
             }
             if(ammo==0)

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class SpawnUnitStep : MonoBehaviour {
+using UnityEngine.Networking;
+public class SpawnUnitStep : NetworkBehaviour {
 
     int [] maxpig =   { 10,7, 6, 5, 2, 0, 0};
     int [] maxtiger = { 0, 2, 3, 5, 7, 0, 0 };
@@ -16,13 +16,11 @@ public class SpawnUnitStep : MonoBehaviour {
     bool spawnMachine = true;
     bool spawnBoss = true;
     bool ending = false;
-    void start()
-    {
 
-    }
 	
 	// Update is called once per frame
 	void Update () {
+        
 
         if (GameObject.FindGameObjectsWithTag("PigTag").Length==0 && 
             GameObject.FindGameObjectsWithTag("LionTag").Length == 0 &&

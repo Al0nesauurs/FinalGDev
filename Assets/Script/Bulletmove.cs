@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Bulletmove : MonoBehaviour {
+public class Bulletmove : NetworkBehaviour {
     private float t;
     private PigController Pigscript;
     private LionController Lionscript;
@@ -13,16 +14,15 @@ public class Bulletmove : MonoBehaviour {
     RaycastHit hit;
 	// Update is called once per frame
 	void Update () {
+        if(isLocalPlayer)
+        {
+            return;
+        }
+
         t += Time.deltaTime;
         if (t > 5)
             Destroy(gameObject);
 		gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 10f*speed);
-       /* Ray fRay = new Ray(transform.position, Vector3.forward);
-
-        if (Physics.Raycast(fRay, out hit,1.5f))
-        {
-
-        }*/
 	}
 
 
