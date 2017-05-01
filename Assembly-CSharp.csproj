@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{51CBAA5B-8961-2650-7189-1AC8F761431E}</ProjectGuid>
+    <ProjectGuid>{6CCD6C6F-BA59-ADE8-5CE0-262FF7A56685}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -85,6 +85,7 @@
      <Compile Include="Assets\Script\SpawnUnitStep.cs" />
      <Compile Include="Assets\Script\StoneController.cs" />
      <Compile Include="Assets\Script\StoneSpawn.cs" />
+     <Compile Include="Assets\Script\Takeitem.cs" />
      <Compile Include="Assets\Script\TreeController.cs" />
      <Compile Include="Assets\Script\TreeSpawn.cs" />
      <Compile Include="Assets\Script\WeaponController.cs" />

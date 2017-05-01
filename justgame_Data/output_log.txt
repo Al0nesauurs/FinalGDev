@@ -1,31 +1,37 @@
-Initialize engine version: 5.6.0f3 (497a0f351392)
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 620 (ID=0xf01)
-    Vendor:   NVIDIA
-    VRAM:     979 MB
-    Driver:   22.21.13.8165
+    Version:  Direct3D 11.0 [level 10.0]
+    Renderer: Intel(R) HD Graphics (ID=0x46)
+    Vendor:   Intel
+    VRAM:     445 MB
+    Driver:   8.15.10.2189
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.034 seconds
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\System.dll (this message is harmless)
-desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  3.277 seconds
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.529702 ms
+UnloadTime: 4.805401 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 15e0 -> priority: 1 
+  Thread -> id: 36c8 -> priority: 1 
 The prefab 'Player' has multiple NetworkIdentity components. There can only be one NetworkIdentity on a prefab, and it must be on the root object.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+stage= 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -33,27 +39,12 @@ Add Weaponpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Add Weaponpistol(Clone)
+Add Weaponpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-CheckWEaponpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponpistol
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:65265}
+ServerDisconnected due to error: Timeout
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
