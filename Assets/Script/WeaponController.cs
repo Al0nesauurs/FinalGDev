@@ -28,7 +28,6 @@ public class WeaponController : MonoBehaviour {
 
 
     void Start () {
-        ammo = 0;
         t = 0;
         hit = false;
         timeReload = 0;
@@ -85,7 +84,6 @@ public class WeaponController : MonoBehaviour {
         }
 
     }
-
   
     public void CmdCheckWeapon()
     {

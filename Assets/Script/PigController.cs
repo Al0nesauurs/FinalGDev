@@ -7,7 +7,7 @@ public class PigController : NetworkBehaviour
 {
     Transform playerarm;
     float trun = 0;
-    private float hp = 12;
+    [SyncVar]  public float hp = 12;
     public static float damageApply = 0;
     bool running = false;
     bool fliping = false;
