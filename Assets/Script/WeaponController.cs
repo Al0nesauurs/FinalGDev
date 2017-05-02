@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class WeaponController : NetworkBehaviour {
+public class WeaponController : MonoBehaviour {
 
     public GameObject Bullet;
     public Transform BulletSpawn;
@@ -39,9 +39,6 @@ public class WeaponController : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isLocalPlayer)
-            BulletSpawn = GameObject.Find("BulletSpawn").transform;
-
 
         if (startReload)
         {

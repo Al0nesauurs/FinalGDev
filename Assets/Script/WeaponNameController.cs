@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
-public class WeaponNameController : NetworkBehaviour
+public class WeaponNameController : MonoBehaviour
 {
     public GameObject Pistol;
     public GameObject MachineGun;

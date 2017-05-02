@@ -21,13 +21,13 @@ public class LionController : MonoBehaviour
     public static bool bosscommand = false;
 	public AudioClip hitlion;
 	public AudioClip liondeath;
-	AudioSource audio;
+	AudioSource audios;
 
 
     // Use this for initialization
     void Start()
     {
-		audio = GetComponent<AudioSource>();
+		audios = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playertran = player.transform;
 
@@ -84,7 +84,7 @@ public class LionController : MonoBehaviour
 
 		if (hp >= 1) 
 		{
-			audio.PlayOneShot(hitlion, 0.7F);
+			audios.PlayOneShot(hitlion, 0.7F);
 		}
 
         if (hp <= 0)

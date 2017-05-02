@@ -23,11 +23,8 @@ public class PlayerController : NetworkBehaviour
     public WeaponNameController WeaponNameControl;
     public Camera Tps;
     public Camera Fps;
-    //public Slider healthSlider;
-	//public Image damageImage;
 	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
 	private double timer = 1.0;
-	//public Image Heart;
 	public AudioSource pause;
 	public AudioSource normalsound;
 	AudioSource soundEffect;
@@ -60,8 +57,8 @@ public class PlayerController : NetworkBehaviour
         CheckIfLocal();
         if (!isLocalPlayer)
         {
-            Tps.enabled = false;
-            Fps.enabled = false;
+            Tps.gameObject.SetActive(false);
+            Fps.gameObject.SetActive(false);
             return;
         }
         else
@@ -114,13 +111,20 @@ public class PlayerController : NetworkBehaviour
 		if (Input.GetKeyDown(KeyCode.Mouse0)&&Time.timeScale == 1)
 		{
             Debug.Log("SHOOTING");
-			WeaponControl.CmdCheckWeapon();
-		}
+            Cmdeiei();
+
+        }
 
 	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    [Command]
+    void Cmdeiei()
+    {
+            WeaponControl.CmdCheckWeapon();
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void KeyboardControl()
+    public void KeyboardControl()
 	{
 		CanJump = IsGrounded();
 		if (Input.GetAxis("Horizontal") != 0 && CanWalk)
