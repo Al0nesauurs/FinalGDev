@@ -103,7 +103,8 @@ public class BossController : NetworkBehaviour {
     void DropItem()
     {
         Vector3 meatposition = new Vector3(Random.Range(gameObject.transform.position.x + 0.3f, gameObject.transform.position.x - 0.3f), gameObject.transform.position.y, gameObject.transform.position.z);
-        Instantiate(meat, meatposition, Quaternion.identity);
+        GameObject Dmeat = (GameObject)Instantiate(meat, meatposition, Quaternion.identity);
+        NetworkServer.Spawn(Dmeat);
     }
 
     void spawnslaves (int num)

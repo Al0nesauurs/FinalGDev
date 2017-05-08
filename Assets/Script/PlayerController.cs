@@ -53,7 +53,7 @@ public class PlayerController : NetworkBehaviour
         Fps.enabled = false;
 		Cantakeitem = true;
         distToGround = GameObject.Find("LegRight").GetComponent<Collider>().bounds.extents.y;
-        GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = false;
+        gameObject.GetComponentInChildren<Canvas>().enabled = false;
 
     }
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -80,12 +80,12 @@ public class PlayerController : NetworkBehaviour
                     if (ReloadTime < 3)
                     {
                         ReloadTime += Time.deltaTime;
-                       // GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOADING IN " + (int)(4 - ReloadTime) + "";
-
+                        gameObject.GetComponentInChildren<Text>().text= "RELOADING IN " + (int)(4 - ReloadTime) + "";
                     }
                     else
                     {
                         CmdReload();
+                        gameObject.GetComponentInChildren<Text>().text = "+";
                         Reloading = false;
                         ReloadTime = 0;
                     }
@@ -120,13 +120,13 @@ public class PlayerController : NetworkBehaviour
 		gameObject.transform.rotation = Quaternion.Euler(mouseInputX, mouseInputY, 0);
 		if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == false)
 		{
-			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = false;
+            gameObject.GetComponentInChildren<Canvas>().enabled = false;
 			Tps.enabled = true;
 			Fps.enabled = false;
 		}
 		else if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == true)
 		{
-			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
+            gameObject.GetComponentInChildren<Canvas>().enabled = true;
 			Tps.enabled = false;
 			Fps.enabled = true;
 		}
@@ -235,8 +235,10 @@ public class PlayerController : NetworkBehaviour
             //Time.timeScale = 0;
             Cursor.visible = enabled; 
             GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
-            GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
-			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
+           // GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
+		//	GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
+            gameObject.GetComponentInChildren<Canvas>().enabled = true;
+            gameObject.GetComponentInChildren<Text>().text = "You are DEAD!";
 		}
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -266,8 +268,8 @@ public class PlayerController : NetworkBehaviour
         GameObject.Find("HealthBar").GetComponent<Slider>().value = PlayerHealth;
         if (PlayerHealth == 0) 
 		{
-			GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
-			GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
+            gameObject.GetComponentInChildren<Canvas>().enabled = true;
+            gameObject.GetComponentInChildren<Text>().text = "You are DEAD!";
 		}
 
     }

@@ -66,17 +66,14 @@ public class WeaponController : MonoBehaviour {
 
     public void Reload (ref int localammo)
     {
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "+";
-                if (gameObject.name == "pistol" || gameObject.name == "pistol(Clone)")
-                {
-                    localammo = 10;
-                }
-                if (gameObject.name == "machinegun" || gameObject.name == "machinegun(Clone)")
-                {
-                    localammo = 30;
-                }
-
-            
+        if (gameObject.name == "pistol" || gameObject.name == "pistol(Clone)")
+        {
+            localammo = 10;
+        }
+        if (gameObject.name == "machinegun" || gameObject.name == "machinegun(Clone)")
+        {
+            localammo = 30;
+        }
     }
 
     public void CmdCheckWeapon(ref int ammolocal)
@@ -92,16 +89,15 @@ public class WeaponController : MonoBehaviour {
             {
                 source.PlayOneShot(HandgunSound, 1F);
                 GameObject bullet =(GameObject)Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                muzzleFlash = GameObject.Find("Muzzle Flash p");
-                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                ParticleSystem flash = gameObject.GetComponentInChildren<ParticleSystem>();
                 flash.Play();
                 NetworkServer.Spawn(bullet);
                 ammolocal--;
             }
             if(ammolocal==0)
             {
+                gameObject.GetComponentInChildren<Text>().text = "RELOAD NOW!!";
                 source.PlayOneShot(HandgunSoundR, 1F);
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOAD NOW!!";
             }
         }
         else if (gameObject.name == "machinegun" || gameObject.name == "machinegun(Clone)")
@@ -118,7 +114,7 @@ public class WeaponController : MonoBehaviour {
             if (ammo == 0)
             {
                 source.PlayOneShot(MachinegunSoundR, 1F);
-                //GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOAD NOW!!";
+                gameObject.GetComponentInChildren<Text>().text = "RELOAD NOW!!";
             }
         }
 
