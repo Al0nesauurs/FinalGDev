@@ -24,7 +24,7 @@ public class WeaponNameController : MonoBehaviour
         {
             if (weaponname == "pistol" || weaponname == "pistol(Clone)")
             {
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "Reload first!!!";
+          //      GameObject.Find("Crosshair").GetComponent<Text>().text = "Reload first!!!";
                 myNew = Instantiate(Pistol, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y-0.06f, gameObject.transform.position.z), gameObject.transform.rotation);
                 WeaponController.ammo = 0;
                 Bulletmove.power = 10;

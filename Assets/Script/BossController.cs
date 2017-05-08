@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class BossController : MonoBehaviour {
+public class BossController : NetworkBehaviour {
 
 
     UnityEngine.AI.NavMeshAgent nav;
     GameObject player;
     Transform playertran;
     float trun = 0;
-    public int hp = 1000;
+    [SyncVar]public int hp = 1000;
     int beforehp = 1000;
     public static float damageApply = 0;
     bool running = false;

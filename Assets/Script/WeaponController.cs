@@ -39,27 +39,6 @@ public class WeaponController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (startReload)
-        {
-            timeReload += Time.deltaTime;
-            if (timeReload < 3&&PlayerController.PlayerHealth>0)
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOADING IN "+(int)(4-timeReload)+"";
-            else
-            {
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "+";
-                Debug.Log("RELOAD!" + timeReload);
-                if (gameObject.name == "pistol" || gameObject.name == "pistol(Clone)")
-                {
-                    ammo = 10;
-                }
-                if (gameObject.name == "machinegun" || gameObject.name == "machinegun(Clone)")
-                {
-                    ammo = 30;
-                }
-                startReload = false;
-                timeReload = 0;
-            }
-        }
         if (hit)
         {
             t += Time.deltaTime;
@@ -84,8 +63,23 @@ public class WeaponController : MonoBehaviour {
         }
 
     }
-  
-    public void CmdCheckWeapon()
+
+    public void Reload (ref int localammo)
+    {
+                GameObject.Find("Crosshair").GetComponent<Text>().text = "+";
+                if (gameObject.name == "pistol" || gameObject.name == "pistol(Clone)")
+                {
+                    localammo = 10;
+                }
+                if (gameObject.name == "machinegun" || gameObject.name == "machinegun(Clone)")
+                {
+                    localammo = 30;
+                }
+
+            
+    }
+
+    public void CmdCheckWeapon(ref int ammolocal)
     {
         Debug.Log("CheckWEapon" + gameObject.name);
         if(gameObject.name=="hand")
@@ -94,7 +88,7 @@ public class WeaponController : MonoBehaviour {
         }
         else if (gameObject.name=="pistol"|| gameObject.name == "pistol(Clone)")
         {
-            if (ammo > 0)
+            if (ammolocal > 0)
             {
                 source.PlayOneShot(HandgunSound, 1F);
                 GameObject bullet =(GameObject)Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
@@ -102,9 +96,9 @@ public class WeaponController : MonoBehaviour {
                 flash = muzzleFlash.GetComponent<ParticleSystem>();
                 flash.Play();
                 NetworkServer.Spawn(bullet);
-                ammo--;
+                ammolocal--;
             }
-            if(ammo==0)
+            if(ammolocal==0)
             {
                 source.PlayOneShot(HandgunSoundR, 1F);
                 GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOAD NOW!!";
@@ -124,7 +118,7 @@ public class WeaponController : MonoBehaviour {
             if (ammo == 0)
             {
                 source.PlayOneShot(MachinegunSoundR, 1F);
-                GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOAD NOW!!";
+                //GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOAD NOW!!";
             }
         }
 

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LionSpawn : MonoBehaviour {
+public class LionSpawn : NetworkBehaviour {
 
     public GameObject LionModel;
     public float AllTime = 0;
@@ -23,6 +24,8 @@ public class LionSpawn : MonoBehaviour {
             Vector3 position = new Vector3(Random.Range(-10f, 10f) +gameObject.transform.position.x, 5, Random.Range(-0, 10f) + gameObject.transform.position.z);
             var myNew = Instantiate(LionModel, position, Quaternion.identity);
             myNew.transform.parent = gameObject.transform;
+            NetworkServer.Spawn(myNew);
+
         }
         else
         {

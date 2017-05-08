@@ -10,6 +10,7 @@ public class PlayerController : NetworkBehaviour
     private bool CanWalk = true;
     private bool CanJump = true;
     private bool usingitem = false;
+    private bool Reloading = false;
     static public bool HaveGun = false;
     public static bool CursorResume = true;
     public static bool canrightclick = true;
@@ -17,6 +18,7 @@ public class PlayerController : NetworkBehaviour
     public float force = 5;
     public float MouseSpeed = 3;
 	public float WaitTime =3;
+    private float ReloadTime = 0;
     float mouseInputX, mouseInputY;
     public static int PlayerHealth = 100;
     public WeaponController WeaponControl;
@@ -31,6 +33,7 @@ public class PlayerController : NetworkBehaviour
 	public AudioClip liondeath;
 	public static bool Cantakeitem = true;
 
+    public int ammolocal=0;
 
 
 
@@ -71,8 +74,25 @@ public class PlayerController : NetworkBehaviour
             {
                 KeyboardControl();
                 MouseControl();
+
+                if (Reloading)
+                {
+                    if (ReloadTime < 3)
+                    {
+                        ReloadTime += Time.deltaTime;
+                       // GameObject.Find("Crosshair").GetComponent<Text>().text = "RELOADING IN " + (int)(4 - ReloadTime) + "";
+
+                    }
+                    else
+                    {
+                        CmdReload();
+                        Reloading = false;
+                        ReloadTime = 0;
+                    }
+                }
             }
             UIControl();
+
         }
 
     }
@@ -114,7 +134,6 @@ public class PlayerController : NetworkBehaviour
 		{
             Debug.Log("SHOOTING");
             Cmdeiei();
-
         }
 
 	}
@@ -122,9 +141,19 @@ public class PlayerController : NetworkBehaviour
     [Command]
     void Cmdeiei()
     {
-            WeaponControl.CmdCheckWeapon();
+        Debug.Log("before shoot ammo = " + ammolocal);
+        WeaponControl.CmdCheckWeapon(ref ammolocal);
+        Debug.Log("After shoot ammo = "+ammolocal);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [Command]
+    void CmdReload()
+    {
+        ammolocal = 0;
+        Reloading = true;
+        WeaponControl.Reload(ref ammolocal);
+
+    }
 
     public void KeyboardControl()
 	{
@@ -171,10 +200,9 @@ public class PlayerController : NetworkBehaviour
 			}
 
 		}
-		if (Input.GetKeyDown(KeyCode.R) && WeaponNameController.weaponname != "hand"&&Time.timeScale == 1)
+		if (Input.GetKeyDown(KeyCode.R) && WeaponNameController.weaponname != "hand")
 		{
-			WeaponController.ammo = 0;
-			WeaponController.startReload = true;
+            Reloading = true;
 		}
 
 		if (Input.GetKeyDown(KeyCode.Escape))

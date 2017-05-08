@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class LionController : MonoBehaviour
+public class LionController : NetworkBehaviour
 {
 
     UnityEngine.AI.NavMeshAgent nav;
     GameObject player;
     Transform playertran;
     //float trun = 0;
-    public int hp = 50;
+    [SyncVar] public int hp = 50;
     public static float damageApply = 0;
     bool running = false;
     bool fliping = false;
