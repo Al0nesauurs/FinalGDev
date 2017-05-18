@@ -86,6 +86,7 @@
     <Compile Include="Assets\Game Jam Template\Scripts\SetAudioLevels.cs" />
     <Compile Include="Assets\Game Jam Template\Scripts\ShowPanels.cs" />
     <Compile Include="Assets\Game Jam Template\Scripts\StartOptions.cs" />
+    <Compile Include="Assets\HPController.cs" />
     <Compile Include="Assets\Model\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Model\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
     <Compile Include="Assets\Model\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />

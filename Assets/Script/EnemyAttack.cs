@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyAttack : NetworkBehaviour
 {
     public float timeBetweenAttacks = 0.5f;     // The time in seconds between each attack.
     public int attackDamage = 10;               // The amount of health taken away per attack.
@@ -15,6 +16,7 @@ public class EnemyAttack : MonoBehaviour
     BossController bossctrl;
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    GameObject myobject;
 
 
     void Start()
@@ -27,14 +29,16 @@ public class EnemyAttack : MonoBehaviour
         //anim = GetComponent<Animator>();
     }
 
+ 
 
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.tag =="Player")
         {
             // ... the player is in range.
             Debug.Log("Lion hitting " + other.gameObject);
+            myobject = other.gameObject;
             playerInRange = true;
         }
     }
@@ -43,7 +47,7 @@ public class EnemyAttack : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == playerarm)
+        if (other.gameObject.tag == "Player")
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -70,10 +74,10 @@ public class EnemyAttack : MonoBehaviour
         timer = 0f;
 
         // If the player has health to lose...
-        if (PlayerController.PlayerHealth > 0)
+        if (!PlayerController.dying)
         {
             // ... damage the player.
-            playerctl.TakeDamage(attackDamage);
+            myobject.GetComponent<PlayerController>().TakeDamage(attackDamage);
         }
     }
 }

@@ -70,7 +70,7 @@ public class BossAttack : MonoBehaviour {
         timer = 0f;
 
         // If the player has health to lose...
-        if (PlayerController.PlayerHealth > 0)
+        if (!PlayerController.dying)
         {
             // ... damage the player.
             playerctl.TakeDamage(attackDamage);

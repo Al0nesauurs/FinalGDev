@@ -10,7 +10,7 @@ public class pause_menu : MonoBehaviour
 
     public void Resume()
     {
-        if (PlayerController.PlayerHealth > 0)
+        if (!PlayerController.dying)
         { 
             Time.timeScale = 1;
             GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = false;

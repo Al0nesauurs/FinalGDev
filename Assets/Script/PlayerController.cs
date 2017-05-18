@@ -20,7 +20,8 @@ public class PlayerController : NetworkBehaviour
 	public float WaitTime =3;
     private float ReloadTime = 0;
     float mouseInputX, mouseInputY;
-    public static int PlayerHealth = 100;
+    [SyncVar]public int PlayerHealth = 100;
+    public static bool dying = false;
     public WeaponController WeaponControl;
     public WeaponNameController WeaponNameControl;
     public Camera Tps;
@@ -32,14 +33,34 @@ public class PlayerController : NetworkBehaviour
 	AudioSource soundEffect;
 	public AudioClip liondeath;
 	public static bool Cantakeitem = true;
-
     public int ammolocal=0;
+    public GameObject HpUI;
 
 
-
+    //port from WEAPONCONTROLLER.CS
+    //sound part
+    public AudioClip HandgunSound;
+    public AudioClip MachinegunSound;
+    public AudioClip HandgunSoundR;
+    public AudioClip MachinegunSoundR;
+    private AudioSource source;
+    //end sound part
+    public GameObject Bullet;
+    public Transform BulletSpawn;
+    public GameObject Pistol;
+    public Transform ArmLocate;
+    float t = 0;
+    bool hit = false;
+    float timeReload = 0;
+    public static bool startReload = false;
+    private GameObject muzzleFlash;
+    private ParticleSystem flash;
+    public GameObject mycrosshair;
+    //END PORT
 
     void Start()
     {
+        source = GetComponent<AudioSource>();
         Cursor.visible = false;
         CanWalk = true;
         CanJump = true;
@@ -64,6 +85,7 @@ public class PlayerController : NetworkBehaviour
         {
             Tps.gameObject.SetActive(false);
             Fps.gameObject.SetActive(false);
+            HpUI.SetActive(false);
             return;
         }
         else
@@ -79,6 +101,7 @@ public class PlayerController : NetworkBehaviour
                 {
                     if (ReloadTime < 3)
                     {
+                        ammolocal = 0;
                         ReloadTime += Time.deltaTime;
                         gameObject.GetComponentInChildren<Text>().text= "RELOADING IN " + (int)(4 - ReloadTime) + "";
                     }
@@ -90,9 +113,9 @@ public class PlayerController : NetworkBehaviour
                         ReloadTime = 0;
                     }
                 }
+
             }
             UIControl();
-
         }
 
     }
@@ -101,6 +124,7 @@ public class PlayerController : NetworkBehaviour
     {
         if (HaveGun == false)
         {
+            //HaveGun = true;
             WeaponNameController.weaponname = "pistol";
         }
     }
@@ -133,16 +157,16 @@ public class PlayerController : NetworkBehaviour
 		if (Input.GetKeyDown(KeyCode.Mouse0)&&Time.timeScale == 1)
 		{
             Debug.Log("SHOOTING");
-            Cmdeiei();
+            CmdCheckWeapon();
         }
 
 	}
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    [Command]
-    void Cmdeiei()
+    /*
+    void CmdShoot()
     {
         Debug.Log("before shoot ammo = " + ammolocal);
-        WeaponControl.CmdCheckWeapon(ref ammolocal);
+        CmdCheckWeapon();
         Debug.Log("After shoot ammo = "+ammolocal);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,7 +177,7 @@ public class PlayerController : NetworkBehaviour
         Reloading = true;
         WeaponControl.Reload(ref ammolocal);
 
-    }
+    }*/
 
     public void KeyboardControl()
 	{
@@ -182,7 +206,6 @@ public class PlayerController : NetworkBehaviour
 			if (Time.timeScale == 1||PlayerHealth<=0)
 			{
 				Cursor.visible = true;
-				Time.timeScale = 0;
 				GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
 				pause.enabled = true;
 				normalsound.enabled = false;
@@ -193,7 +216,6 @@ public class PlayerController : NetworkBehaviour
 					Cursor.visible = true; 
 				else
 					Cursor.visible=false;
-				Time.timeScale = 1;
 				GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = false;
 				pause.enabled = false;
 				normalsound.enabled = true;
@@ -232,11 +254,8 @@ public class PlayerController : NetworkBehaviour
 
         if (PlayerHealth <= 0)
 		{
-            //Time.timeScale = 0;
             Cursor.visible = enabled; 
             GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
-           // GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = true;
-		//	GameObject.Find("Crosshair").GetComponent<Text>().text = "You are DEAD!";
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
             gameObject.GetComponentInChildren<Text>().text = "You are DEAD!";
 		}
@@ -265,9 +284,10 @@ public class PlayerController : NetworkBehaviour
 		}
         //healthSlider.value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
-        GameObject.Find("HealthBar").GetComponent<Slider>().value = PlayerHealth;
+        gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
         if (PlayerHealth == 0) 
 		{
+            dying = true;
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
             gameObject.GetComponentInChildren<Text>().text = "You are DEAD!";
 		}
@@ -279,6 +299,63 @@ public class PlayerController : NetworkBehaviour
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [Command]
+    public void CmdReload()
+    {
+        if (WeaponNameController.weaponname == "pistol" || WeaponNameController.weaponname == "pistol(Clone)")
+        {
+            ammolocal = 10;
+        }
+        if (WeaponNameController.weaponname == "machinegun" || WeaponNameController.weaponname == "machinegun(Clone)")
+        {
+            ammolocal = 30;
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [Command]
+    public void CmdCheckWeapon()
+    {
+        Debug.Log("CheckWEapon" + WeaponNameController.weaponname);
+        if (WeaponNameController.weaponname == "hand")
+        {
+            hit = true;
+        }
+        else if (WeaponNameController.weaponname == "pistol" || WeaponNameController.weaponname == "pistol(Clone)")
+        {
+            if (ammolocal > 0)
+            {
+                source.PlayOneShot(HandgunSound, 1F);
+                GameObject bullet = (GameObject)Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                flash = gameObject.GetComponentInChildren<ParticleSystem>();
+                flash.Play();
+                NetworkServer.Spawn(bullet);
+                ammolocal--;
+            }
+            if (ammolocal == 0)
+            {
+                Debug.Log("CHECKBUG");
+                mycrosshair.GetComponentInChildren<Text>().text = "RELOAD NOW!!";
+                source.PlayOneShot(HandgunSoundR, 1F);
+            }
+        }
+        else if (WeaponNameController.weaponname == "machinegun" || WeaponNameController.weaponname == "machinegun(Clone)")
+        {
+            if (ammolocal > 0)
+            {
+                source.PlayOneShot(MachinegunSound, 1F);
+                Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
+                muzzleFlash = GameObject.Find("Muzzle Flash m");
+                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                flash.Play();
+                ammolocal--;
+            }
+            if (ammolocal == 0)
+            {
+                source.PlayOneShot(MachinegunSoundR, 1F);
+                mycrosshair.GetComponentInChildren<Text>().text = "RELOAD NOW!!";
+            }
+        }
 
+    }
 }

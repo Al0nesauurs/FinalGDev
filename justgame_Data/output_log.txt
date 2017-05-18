@@ -1,32 +1,30 @@
-Initialize engine version: 5.5.0f3 (38b4efef76f0)
+Initialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.0]
-    Renderer: Intel(R) HD Graphics (ID=0x46)
-    Vendor:   Intel
-    VRAM:     445 MB
-    Driver:   8.15.10.2189
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 620 (ID=0xf01)
+    Vendor:   NVIDIA
+    VRAM:     979 MB
+    Driver:   22.21.13.8205
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.064 seconds
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\KID\Desktop\AllComputer\mygit\myunity\FinalGDev\justgame_Data\Managed\System.dll (this message is harmless)
-desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  2.003 seconds
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\justgame_Data\Managed\System.dll (this message is harmless)
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.436055 ms
+UnloadTime: 185.355835 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 8494 -> priority: 1 
+  Thread -> id: 8e0 -> priority: 1 
 Add Weaponpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -43,195 +41,375 @@ SHOOTING
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Detected!!!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 80
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 70
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 60
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 50
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Detected!!!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 40
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 30
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 30
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 20
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 20
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+DAMAGE! 10now player health = 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> ArmLeft1 (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> ArmLeft1 (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SpawnObject for meat(Clone) (UnityEngine.GameObject), NetworkServer is not active. Cannot spawn objects without an active server.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Detected!!!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> PANTHER(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> pistol(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Detected!!!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Detected!!!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Lion hitting Player(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
