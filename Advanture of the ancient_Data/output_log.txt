@@ -15,25 +15,172 @@ Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advan
 Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.030 seconds
+- Completed reload, in  0.046 seconds
 Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.104999 ms
+UnloadTime: 2.204489 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2548 -> priority: 1 
+  Thread -> id: 2938 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.083689 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 549.
+Total: 0.472664 ms (FindLiveObjects: 0.043985 ms CreateObjectMapping: 0.024436 ms MarkObjects: 0.398658 ms  DeleteObjects: 0.004538 ms)
+
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 620 (ID=0xf01)
+    Vendor:   NVIDIA
+    VRAM:     979 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.039 seconds
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.944069 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.003278 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1792.
+Total: 1.180265 ms (FindLiveObjects: 0.120784 ms CreateObjectMapping: 0.100537 ms MarkObjects: 0.663964 ms  DeleteObjects: 0.294280 ms)
+
+stage= 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponhand
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponhand
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1c8c -> priority: 1 
+Add WeaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 11.970221 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 549.
+Total: 0.673041 ms (FindLiveObjects: 0.058646 ms CreateObjectMapping: 0.042937 ms MarkObjects: 0.562031 ms  DeleteObjects: 0.008727 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.099626 ms
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1792.
+Total: 1.145706 ms (FindLiveObjects: 0.119737 ms CreateObjectMapping: 0.098442 ms MarkObjects: 0.656983 ms  DeleteObjects: 0.270193 ms)
+
+stage= 0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Add WeaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 620 (ID=0xf01)
+    Vendor:   NVIDIA
+    VRAM:     979 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.027 seconds
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GT 620 (ID=0xf01)
+    Vendor:   NVIDIA
+    VRAM:     979 MB
+    Driver:   22.21.13.8205
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.027 seconds
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All_Computer\mygit\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
+desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+<RI> Initialized touch support.
+UnloadTime: 1.599520 ms
+UnloadTime: 1.844230 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 318 -> priority: 1 
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2490 -> priority: 1 
 The referenced script on this Behaviour (Game Object 'Mmachinegun') is missing!
  
 (Filename:  Line: 1743)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.998860 ms
+UnloadTime: 7.156299 ms
 
 Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1702.
-Total: 1.214825 ms (FindLiveObjects: 0.175940 ms CreateObjectMapping: 0.072610 ms MarkObjects: 0.661172 ms  DeleteObjects: 0.304055 ms)
+Total: 1.280453 ms (FindLiveObjects: 0.268448 ms CreateObjectMapping: 0.067723 ms MarkObjects: 0.658030 ms  DeleteObjects: 0.285204 ms)
+
+The referenced script on this Behaviour (Game Object 'Mmachinegun') is missing!
+ 
+(Filename:  Line: 1743)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.078802 ms
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1702.
+Total: 1.144309 ms (FindLiveObjects: 0.150805 ms CreateObjectMapping: 0.084828 ms MarkObjects: 0.608809 ms  DeleteObjects: 0.298819 ms)
 
 stage= 0
  
@@ -43,11 +190,7 @@ Add WeaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
+Add WeaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -55,27 +198,15 @@ Add WeaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-CheckWEaponMpistol
+Add WeaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
+RELOAD!3.007005
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DAMAGE! 10now player health = 90
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Bullet hit -> Head1 (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Bullet hit -> Head1 (UnityEngine.GameObject)
+SHOOTING
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -83,15 +214,11 @@ CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
+RELOAD!3.013745
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-DAMAGE! 10now player health = 80
+SHOOTING
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -99,23 +226,239 @@ CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
+SHOOTING
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> MPlayer(Clone) (UnityEngine.GameObject)
+CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-DAMAGE! 10now player health = 70
+CheckWEaponLpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> Body1 (UnityEngine.GameObject)
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Bullet hit -> Body1 (UnityEngine.GameObject)
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RELOAD!3.004202
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -139,22 +482,6 @@ HP CON!
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Bullet hit -> Mpigf(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -175,22 +502,6 @@ CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
 Bullet hit -> Mpigf(Clone) (UnityEngine.GameObject)
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -200,42 +511,6 @@ Bullet hit -> Mpigf(Clone) (UnityEngine.GameObject)
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 HP CON!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Bullet hit -> Mpigf(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Bullet hit -> Mpigf(Clone) (UnityEngine.GameObject)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-HP CON!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-SHOOTING
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-CheckWEaponMpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
@@ -244,6 +519,214 @@ Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Mmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lpigf(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+HP CON!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bullet hit -> Lmeat(Clone) (UnityEngine.GameObject)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+RELOAD!3.009226
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponLpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+CheckWEaponMpistol
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+SHOOTING
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+CheckWEaponLpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
