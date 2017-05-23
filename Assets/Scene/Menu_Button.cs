@@ -5,12 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Button : MonoBehaviour {
 
-    public void OnClickButton()
+    public void LoadSingleplayer()
     {
-        SceneManager.LoadScene("MyGame");
+        SceneManager.LoadScene("Local");
     }
     public void LoadTutorial()
     {
         SceneManager.LoadScene("How2Play");
+    }
+    public void LoadMultiplayer()
+    {
+        SceneManager.LoadScene("Multiplayer");
+    }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
