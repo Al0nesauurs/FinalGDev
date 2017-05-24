@@ -23,7 +23,6 @@ public class MEnemyAttack : NetworkBehaviour
     {
         player = GameObject.Find("MPlayer(Clone)");
         playerarm = GameObject.Find("PlayerArm");
-        playerctl = player.GetComponent<MPlayerController>();
         lionctl = GetComponent<MLionController>();
         bossctrl = GetComponent<MBossController>();
         //anim = GetComponent<Animator>();

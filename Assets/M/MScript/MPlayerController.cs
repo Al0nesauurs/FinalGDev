@@ -31,7 +31,8 @@ public class MPlayerController : NetworkBehaviour
 	public AudioSource pause;
 	public AudioSource normalsound;
 	AudioSource soundEffect;
-	public AudioClip liondeath;
+	public AudioClip Splayerhurt;
+    public AudioClip Splayerdeath;
 	public static bool Cantakeitem = true;
     public int ammolocal=0;
     public GameObject HpUI;
@@ -249,18 +250,23 @@ public class MPlayerController : NetworkBehaviour
         healthbar = PlayerHealth;
 		if (PlayerHealth > 0) 
 		{
-			soundEffect.PlayOneShot (liondeath, 0.7F);
+			soundEffect.PlayOneShot (Splayerhurt,1.5f );
 		}
+        else if(PlayerHealth==0)
+        {
+            soundEffect.PlayOneShot(Splayerdeath, 1.5f);
+        }
         //healthSlider.value = PlayerHealth;
         gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
         if (PlayerHealth == 0) 
 		{
-            dying = true;
             gameObject.transform.rotation = Quaternion.Euler(-90, gameObject.transform.rotation.y, 0);
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
+            dying = true;
             crosshair.GetComponent<MCrosshairManager>().DEATH();
-		}
+            gameObject.tag = "Death";
+        }
 
     }
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

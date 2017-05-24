@@ -38,7 +38,16 @@ public class MLionController : NetworkBehaviour
     {
         if (running||bosscommand)
         {
-				run ();
+            if (CanSeePlayer())
+            {
+                Debug.Log("Detected!!!");
+                running = true;
+            }
+            else
+            {
+                running = false;
+            }
+            run ();
         }
         else
         {
@@ -46,6 +55,10 @@ public class MLionController : NetworkBehaviour
             {
                 Debug.Log("Detected!!!");
                 running = true;
+            }
+            else
+            {
+                running = false;
             }
             if (TimetoWalk <= 0)
             {
@@ -92,13 +105,15 @@ public class MLionController : NetworkBehaviour
             DropItem();
             DropItem();
             DropItem();
+            MScoreManager.Score += 10;
 			Destroy(gameObject);
         }
     }
 
     void run()
     {
-        var targetPosition = FindClosestEnemy().transform.position;
+        Vector3 targetPosition = new Vector3();
+        targetPosition = FindClosestEnemy().transform.position;
         nav.SetDestination(targetPosition);
     }
 		
@@ -112,7 +127,9 @@ public class MLionController : NetworkBehaviour
 
     bool CanSeePlayer()
     {
-        var rayDirection = FindClosestEnemy().transform.position - transform.position;
+        Vector3 rayDirection=new Vector3() ;
+        if (FindClosestEnemy()!=null)
+             rayDirection = FindClosestEnemy().transform.position - transform.position;
         RaycastHit hit;
         int layerMask = 1 << 10;
         layerMask = ~layerMask;

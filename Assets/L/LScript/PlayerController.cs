@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour
 	public AudioSource pause;
 	public AudioSource normalsound;
 	AudioSource soundEffect;
-	public AudioClip liondeath;
-	public static bool Cantakeitem = true;
+    public AudioClip Splayerhurt;
+    public AudioClip Splayerdeath;
+    public static bool Cantakeitem = true;
 
 
 
@@ -191,10 +192,14 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         PlayerHealth -= damage;
-		if (PlayerHealth > 0) 
-		{
-			soundEffect.PlayOneShot (liondeath, 0.7F);
-		}
+        if (PlayerHealth > 0)
+        {
+            soundEffect.PlayOneShot(Splayerhurt, 0.7F);
+        }
+        else if (PlayerHealth == 0)
+        {
+            soundEffect.PlayOneShot(Splayerdeath, 0.7F);
+        }
         healthSlider.value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
 

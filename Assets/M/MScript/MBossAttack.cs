@@ -16,25 +16,28 @@ public class MBossAttack : MonoBehaviour {
     MBossController bossctrl;
     bool playerInRange;                         // Whether player is within the trigger collider and can be attacked.
     float timer;                                // Timer for counting up to the next attack.
+    GameObject myobject;
 
 
     void Start()
     {
-        player = GameObject.Find("MPlayer");
+        player = GameObject.Find("MPlayer(Clone)");
         playerarm = GameObject.Find("PlayerArm");
-        playerctl = player.GetComponent<MPlayerController>();
+        lionctl = GetComponent<MLionController>();
         bossctrl = GetComponent<MBossController>();
         //anim = GetComponent<Animator>();
     }
 
 
+
     void OnTriggerEnter(Collider other)
     {
         // If the entering collider is the player...
-        if (other.gameObject == player)
+        if (other.gameObject.tag == "Player")
         {
             // ... the player is in range.
             Debug.Log("Boss hitting " + other.gameObject);
+            myobject = other.gameObject;
             playerInRange = true;
         }
     }
@@ -43,7 +46,7 @@ public class MBossAttack : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
-        if (other.gameObject == playerarm)
+        if (other.gameObject.tag == "Player")
         {
             // ... the player is no longer in range.
             playerInRange = false;
@@ -73,7 +76,7 @@ public class MBossAttack : MonoBehaviour {
         if (!MPlayerController.dying)
         {
             // ... damage the player.
-            playerctl.TakeDamage(attackDamage);
+            myobject.GetComponent<MPlayerController>().TakeDamage(attackDamage);
         }
     }
 }

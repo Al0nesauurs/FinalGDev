@@ -4,20 +4,18 @@ using System.Collections;
 
 public class MScoreManager : MonoBehaviour
 {
-    public static int CountEnemy;
+    public static int Score;
 
     Text text;
-        void Start ()
+    void Start ()
     {
         text = GetComponent <Text> ();
-        CountEnemy = 0;
     }
 
 
     void Update ()
     {
-        text.text = "Enemy left " + (GameObject.FindGameObjectsWithTag("PigTag").Length 
-            + GameObject.FindGameObjectsWithTag("LionTag").Length
-            + GameObject.FindGameObjectsWithTag("BossTag").Length);
+        if(!MPlayerController.dying)
+            text.text = "Score : " + (Score);
     }
 }

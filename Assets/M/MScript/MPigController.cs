@@ -83,6 +83,7 @@ public class MPigController : NetworkBehaviour
             DropItem();
             DropItem();
             DropItem();
+            MScoreManager.Score += 5;
             Destroy(gameObject);
 
         }

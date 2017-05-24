@@ -7,8 +7,6 @@ public class MBossController : NetworkBehaviour {
 
 
     UnityEngine.AI.NavMeshAgent nav;
-    GameObject player;
-    Transform playertran;
     float trun = 0;
     [SyncVar]public int hp = 1000;
     int beforehp = 1000;
@@ -26,9 +24,6 @@ public class MBossController : NetworkBehaviour {
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playertran = player.transform;
-
         nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
@@ -90,13 +85,15 @@ public class MBossController : NetworkBehaviour {
             DropItem();
             DropItem();
             DropItem();
+            MLionController.bosscommand = false;
+            MScoreManager.Score += 100;
             Destroy(gameObject);
         }
     }
 
     void run()
     {
-        var targetPosition = playertran.position;
+        var targetPosition = FindClosestEnemy().transform.position;
         nav.SetDestination(targetPosition);
     }
 
@@ -115,31 +112,56 @@ public class MBossController : NetworkBehaviour {
     }
     bool CanSeePlayer()
     {
-        var rayDirection = player.transform.position - transform.position;
+        var rayDirection = FindClosestEnemy().transform.position - transform.position;
         RaycastHit hit;
         int layerMask = 1 << 10;
         layerMask = ~layerMask;
         if (Physics.Raycast(transform.position, rayDirection, out hit, 7, layerMask))
-        { 
+        { // If the player is very close behind the player and in view the enemy will detect the player
+          //Debug.Log(hit.transform.name);
             if (hit.transform.tag == "Player")
             {
+                //Debug.Log("Close");
                 return true;
             }
         }
         if ((Vector3.Angle(rayDirection, transform.forward)) <= fieldOfViewRange)
         {
+            // Detect if player is within the field of view
             if (Physics.Raycast(transform.position, rayDirection, out hit, 20, layerMask))
             {
+                //Debug.Log((Vector3.Angle(rayDirection, transform.forward)));
                 if (hit.transform.tag == "Player")
                 {
+                    //Debug.Log("Can see player");
                     return true;
                 }
                 else
                 {
+                    //Debug.Log("Can not see player");
                     return false;
                 }
             }
         }
         return false;
+    }
+    GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }
