@@ -98,8 +98,7 @@ public class WeaponController : MonoBehaviour {
             {
                 source.PlayOneShot(HandgunSound, 1F);
                 Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                muzzleFlash = GameObject.Find("Muzzle Flash p");
-                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                flash = gameObject.GetComponentInChildren<ParticleSystem>();
                 flash.Play();
                 ammo--;
             }
@@ -115,8 +114,7 @@ public class WeaponController : MonoBehaviour {
             {
                 source.PlayOneShot(MachinegunSound, 1F);
                 Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                muzzleFlash = GameObject.Find("Muzzle Flash m");
-                flash = muzzleFlash.GetComponent<ParticleSystem>();
+                flash = gameObject.GetComponentInChildren<ParticleSystem>();
                 flash.Play();
                 ammo--;
             }

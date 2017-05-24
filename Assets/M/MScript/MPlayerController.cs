@@ -305,6 +305,7 @@ public class MPlayerController : NetworkBehaviour
                 GameObject bullet = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
                 flash = gameObject.GetComponentInChildren<ParticleSystem>();
                 flash.Play();
+                RpcFlash();
                 NetworkServer.Spawn(bullet);
                 ammolocal--;
             }
@@ -324,6 +325,7 @@ public class MPlayerController : NetworkBehaviour
                 muzzleFlash = GameObject.Find("Muzzle Flash m");
                 flash = muzzleFlash.GetComponent<ParticleSystem>();
                 flash.Play();
+                RpcFlash();
                 ammolocal--;
             }
             if (ammolocal == 0)
@@ -334,4 +336,17 @@ public class MPlayerController : NetworkBehaviour
         }
 
     }
+    [ClientRpc]
+    void RpcFlash()
+    {
+        flash = gameObject.GetComponentInChildren<ParticleSystem>();
+        flash.Play();
+        if (MWeaponNameController.weaponname == "Mpistol" || MWeaponNameController.weaponname == "Mpistol(Clone)")
+        {
+            source.PlayOneShot(HandgunSound, 1F);
+        }
+        else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)")
+        {
+            source.PlayOneShot(MachinegunSound, 1F);
+        }
 }
