@@ -338,15 +338,13 @@ public class MPlayerController : NetworkBehaviour
     }
     [ClientRpc]
     void RpcFlash()
-    {
-        flash = gameObject.GetComponentInChildren<ParticleSystem>();
-        flash.Play();
-        if (MWeaponNameController.weaponname == "Mpistol" || MWeaponNameController.weaponname == "Mpistol(Clone)")
-        {
-            source.PlayOneShot(HandgunSound, 1F);
-        }
-        else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)")
-        {
-            source.PlayOneShot(MachinegunSound, 1F);
-        }
+	{
+		flash = gameObject.GetComponentInChildren<ParticleSystem> ();
+		flash.Play ();
+		if (MWeaponNameController.weaponname == "Mpistol" || MWeaponNameController.weaponname == "Mpistol(Clone)") {
+			source.PlayOneShot (HandgunSound, 1F);
+		} else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)") {
+			source.PlayOneShot (MachinegunSound, 1F);
+		}
+	}
 }
