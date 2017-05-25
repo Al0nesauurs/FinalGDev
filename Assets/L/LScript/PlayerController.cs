@@ -194,11 +194,11 @@ public class PlayerController : MonoBehaviour
         PlayerHealth -= damage;
         if (PlayerHealth > 0)
         {
-            soundEffect.PlayOneShot(Splayerhurt, 0.7F);
+            soundEffect.PlayOneShot(Splayerhurt, 1.5F);
         }
         else if (PlayerHealth == 0)
         {
-            soundEffect.PlayOneShot(Splayerdeath, 0.7F);
+            soundEffect.PlayOneShot(Splayerdeath, 1.5F);
         }
         healthSlider.value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);

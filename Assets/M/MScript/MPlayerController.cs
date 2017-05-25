@@ -301,17 +301,14 @@ public class MPlayerController : NetworkBehaviour
         {
             if (ammolocal > 0)
             {
-                source.PlayOneShot(HandgunSound, 1F);
                 GameObject bullet = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                flash = gameObject.GetComponentInChildren<ParticleSystem>();
-                flash.Play();
                 RpcFlash();
                 NetworkServer.Spawn(bullet);
                 ammolocal--;
             }
             else 
             {
-                crosshair.GetComponent<MCrosshairManager>().Noammo();
+                RpcNoammo();
                 source.PlayOneShot(HandgunSoundR, 1F);
             }
 
@@ -331,7 +328,7 @@ public class MPlayerController : NetworkBehaviour
             if (ammolocal == 0)
             {
                 source.PlayOneShot(MachinegunSoundR, 1F);
-                crosshair.GetComponent<MCrosshairManager>().Noammo() ;
+                RpcNoammo();
             }
         }
 
@@ -349,4 +346,10 @@ public class MPlayerController : NetworkBehaviour
         {
             source.PlayOneShot(MachinegunSound, 1F);
         }
+    }
+    [ClientRpc]
+    void RpcNoammo()
+    {
+        crosshair.GetComponent<MCrosshairManager>().Noammo();
+    }
 }
