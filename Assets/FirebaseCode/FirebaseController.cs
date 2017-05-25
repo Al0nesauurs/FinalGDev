@@ -15,6 +15,9 @@ public class FirebaseController : MonoBehaviour
     string[] id = new string[1000];
     int[] score = new int[1000];
     int iter = 0;
+	public Text Name0, Name1, Name2;
+	public Text Score0, Score1, Score2;
+
 	void Start()
 	{
 		// ใช้สำหรับอ้างอิง Firebase Project
@@ -106,6 +109,18 @@ public class FirebaseController : MonoBehaviour
             {
                 Debug.Log("Name= "+id[i]+" score = "+score[i]);
             }
+			if (i == 0) {
+				Name0.text = id [i];
+				Score0.text = score [i].ToString();
+			}
+			if (i == 1) {
+				Name1.text = id [i];
+				Score1.text = score [i].ToString();
+			}
+			if (i == 2) {
+				Name2.text = id [i];
+				Score2.text = score [i].ToString();
+			}
         }
     }
 }
