@@ -106,6 +106,7 @@
      <Compile Include="Assets\M\MScript\MeleeSystem.cs" />
      <Compile Include="Assets\M\MScript\Mpause_menu.cs" />
      <Compile Include="Assets\MEnemyLeft.cs" />
+     <Compile Include="Assets\MScoreShow.cs" />
      <Compile Include="Assets\Model\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\Model\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
      <Compile Include="Assets\Model\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
@@ -161,25 +162,25 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.App">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.Auth">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
  </Reference>
  <Reference Include="Firebase.Database">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
  </Reference>
  <Reference Include="Google.MiniJson">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
  </Reference>
  <Reference Include="Google.Sharpen">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Google.Sharpen.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Google.Sharpen.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Compat">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Unity.Compat.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Unity.Compat.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Tasks">
- <HintPath>/Users/booranasit/Desktop/UnityFire111/FinalGDev/Assets/Firebase/Plugins/Unity.Tasks.dll</HintPath>
+ <HintPath>/Users/booranasit/Desktop/GameFire/FinalGDev/Assets/Firebase/Plugins/Unity.Tasks.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

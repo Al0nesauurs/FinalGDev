@@ -12,6 +12,8 @@ public class FirebaseController : MonoBehaviour
 	private DatabaseReference reference;
 	public InputField _Email;
 	public InputField _Password;
+	public Text Name;
+	public Text Point;
 
 	void Start()
 	{
@@ -66,5 +68,8 @@ public class FirebaseController : MonoBehaviour
 		string j = snapshot.Child(key).GetRawJsonValue();
 		HunterData u = JsonUtility.FromJson<HunterData>(j);
 		Debug.Log(u.uid + " " + u.body);
+		//เพิ่มการแสดงค่า
+		Name.text = u.uid;
+		Point.text = u.body;
 	}
 }
