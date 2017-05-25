@@ -12,7 +12,9 @@ public class FirebaseController : MonoBehaviour
 	private DatabaseReference reference;
 	public InputField _Email;
 	public InputField _Password;
-
+    string[] id = new string[1000];
+    int[] score = new int[1000];
+    int iter = 0;
 	void Start()
 	{
 		// ใช้สำหรับอ้างอิง Firebase Project
@@ -20,6 +22,10 @@ public class FirebaseController : MonoBehaviour
 
 		// สำหรับใช้ในการอ้างอิง Firebase
 		reference = FirebaseDatabase.DefaultInstance.RootReference;
+        for(int i=0; i<score.Length;i++)
+        {
+            score[i] = -1;
+        }
 	}
 
 	public void WriteToniData()
@@ -29,7 +35,7 @@ public class FirebaseController : MonoBehaviour
 		Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
 		// เขียนข้อมูลลง Model
 		HunterData tData = new HunterData();
-		tData.body = MScoreManager.Score+"";
+		tData.body = MScoreManager.Score;
 		tData.uid = _Email.text;
 		//tData.body = _Password.text;
 		//tData.uid = _Email.text;
@@ -59,12 +65,47 @@ public class FirebaseController : MonoBehaviour
 		{
 			DisplayData(args.Snapshot, key);
 		}
+
+        Bubblesort();
 	}
 	// ใช้สำหรับ แสดงข้อมูลที่โหลดครับ
 	void DisplayData(DataSnapshot snapshot, string key)
 	{
 		string j = snapshot.Child(key).GetRawJsonValue();
 		HunterData u = JsonUtility.FromJson<HunterData>(j);
-		Debug.Log(u.uid + " " + u.body);
-	}
+		//Debug.Log(u.uid + " " + u.body);
+        id[iter] = u.uid;
+        score[iter] = u.body;
+        iter++;
+    }
+    void Bubblesort()
+    {
+
+        string strtemp = "";
+        int temp = 0;
+
+        for (int write = 0; write < score.Length; write++)
+        {
+            for (int sort = 0; sort < score.Length - 1; sort++)
+            {
+                if (score[sort] < score[sort + 1])
+                {
+                    temp = score[sort + 1];
+                    score[sort + 1] = score[sort];
+                    score[sort] = temp;
+                    strtemp = id[sort + 1];
+                    id[sort + 1] = id[sort];
+                    id[sort] = strtemp;
+                }
+            }
+        }
+        //ปริ้นค่า
+        for (int i = 0; i < score.Length; i++)
+        {
+            if(score[i]!=-1)
+            {
+                Debug.Log("Name= "+id[i]+" score = "+score[i]);
+            }
+        }
+    }
 }
