@@ -79,11 +79,11 @@ public class MPigController : NetworkBehaviour
 
         if (hp <= 0)
         {
-			AudioSource.PlayClipAtPoint(pigdeath, transform.position);
-            DropItem();
-            DropItem();
-            DropItem();
             MScoreManager.Score += 5;
+            AudioSource.PlayClipAtPoint(pigdeath, transform.position);
+            DropItem();
+            DropItem();
+            DropItem();
             Destroy(gameObject);
 
         }
