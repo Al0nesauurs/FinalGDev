@@ -32,6 +32,10 @@ public class MCrosshairManager : MonoBehaviour {
             }
         }
     }
+    public void Haveammo()
+    {
+        text.text = "+";
+    }
     public void initGun()
     {
         text.text = "Reload first";

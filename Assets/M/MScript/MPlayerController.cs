@@ -44,7 +44,6 @@ public class MPlayerController : NetworkBehaviour
     public AudioClip MachinegunSound;
     public AudioClip HandgunSoundR;
     public AudioClip MachinegunSoundR;
-    public AudioClip mysound;
     private AudioSource source;
     //end sound part
     public GameObject Bullet;
@@ -251,13 +250,11 @@ public class MPlayerController : NetworkBehaviour
         healthbar = PlayerHealth;
 		if (PlayerHealth > 0) 
 		{
-            mysound = Splayerhurt;
-            RpcPlaysound(1.5f);
+			soundEffect.PlayOneShot (Splayerhurt,1.5f );
 		}
         else if(PlayerHealth==0)
         {
-            mysound = Splayerdeath;
-            RpcPlaysound(1.5f);
+            soundEffect.PlayOneShot(Splayerdeath, 1.5f);
         }
         //healthSlider.value = PlayerHealth;
         gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
@@ -307,59 +304,33 @@ public class MPlayerController : NetworkBehaviour
                 GameObject bullet = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
                 RpcFlash();
                 NetworkServer.Spawn(bullet);
+                RpcHaveammo();
                 ammolocal--;
             }
             else 
             {
                 RpcNoammo();
-                mysound = HandgunSoundR;
-                RpcPlaysound(1F);
-
             }
 
         }
-        else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)")
-        {
-            if (ammolocal > 0)
-            {
-                GameObject bullet = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                RpcFlash();
-                NetworkServer.Spawn(bullet);
-                ammolocal--;
-            }
-            if (ammolocal == 0)
-            {
-                mysound = MachinegunSound;
-                RpcPlaysound(1F);
-                RpcNoammo();
-            }
-        }
-
     }
     [ClientRpc]
     void RpcFlash()
     {
         flash = gameObject.GetComponentInChildren<ParticleSystem>();
         flash.Play();
-        if (MWeaponNameController.weaponname == "Mpistol" || MWeaponNameController.weaponname == "Mpistol(Clone)")
-        {
-            mysound = HandgunSound;
-            RpcPlaysound(1F);
-        }
-        else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)")
-        {
-            mysound = MachinegunSound;
-            RpcPlaysound(1F);
-        }
     }
     [ClientRpc]
     void RpcNoammo()
     {
         crosshair.GetComponent<MCrosshairManager>().Noammo();
+        source.PlayOneShot(HandgunSoundR, 1F);
     }
     [ClientRpc]
-    void RpcPlaysound(float vol)
+    void RpcHaveammo()
     {
-        source.PlayOneShot(mysound, vol);
+        crosshair.GetComponent<MCrosshairManager>().Haveammo();
+        source.PlayOneShot(HandgunSound, 1F);
     }
+
 }
