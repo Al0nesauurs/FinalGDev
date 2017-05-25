@@ -21,10 +21,10 @@ public class Mpause_menu : MonoBehaviour
         }
     }
 
-    public void Menu()
+    public void Score()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("HuntFirebase");
     }
 
     public void ShowKeyControl()
@@ -46,6 +46,11 @@ public class Mpause_menu : MonoBehaviour
 	{
 		GameObject.Find("option").GetComponent<Canvas>().enabled = false;
 	}
+
+    public void Close()
+    {
+        GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
+    }
 
 
 

@@ -19,6 +19,6 @@ public class Menu_Button : MonoBehaviour {
     }
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("HuntFirebase");
     }
 }

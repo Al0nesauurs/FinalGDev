@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/Multiplayer.unity
+- path: Assets/Scene/HuntFirebase.unity
   isLoaded: 1
   isActive: 1

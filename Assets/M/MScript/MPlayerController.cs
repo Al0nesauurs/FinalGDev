@@ -165,7 +165,7 @@ public class MPlayerController : NetworkBehaviour
 			gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 2000));
 		}
 
-		if (Input.GetKeyDown(KeyCode.I))
+		/*if (Input.GetKeyDown(KeyCode.I))
 		{
 			if (MWeaponNameController.weaponname != "hand")
 			{
@@ -189,7 +189,7 @@ public class MPlayerController : NetworkBehaviour
 				normalsound.enabled = true;
 			}
 
-		}
+		}*/
 		if (Input.GetKeyDown(KeyCode.R) && MWeaponNameController.weaponname != "hand")
 		{
             Reloading = true;
