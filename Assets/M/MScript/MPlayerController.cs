@@ -44,6 +44,7 @@ public class MPlayerController : NetworkBehaviour
     public AudioClip MachinegunSound;
     public AudioClip HandgunSoundR;
     public AudioClip MachinegunSoundR;
+    public AudioClip mysound;
     private AudioSource source;
     //end sound part
     public GameObject Bullet;
@@ -250,11 +251,13 @@ public class MPlayerController : NetworkBehaviour
         healthbar = PlayerHealth;
 		if (PlayerHealth > 0) 
 		{
-			soundEffect.PlayOneShot (Splayerhurt,1.5f );
+            mysound = Splayerhurt;
+            RpcPlaysound(1.5f);
 		}
         else if(PlayerHealth==0)
         {
-            soundEffect.PlayOneShot(Splayerdeath, 1.5f);
+            mysound = Splayerdeath;
+            RpcPlaysound(1.5f);
         }
         //healthSlider.value = PlayerHealth;
         gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
@@ -309,7 +312,9 @@ public class MPlayerController : NetworkBehaviour
             else 
             {
                 RpcNoammo();
-                source.PlayOneShot(HandgunSoundR, 1F);
+                mysound = HandgunSoundR;
+                RpcPlaysound(1F);
+
             }
 
         }
@@ -317,17 +322,15 @@ public class MPlayerController : NetworkBehaviour
         {
             if (ammolocal > 0)
             {
-                source.PlayOneShot(MachinegunSound, 1F);
-                Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
-                muzzleFlash = GameObject.Find("Muzzle Flash m");
-                flash = muzzleFlash.GetComponent<ParticleSystem>();
-                flash.Play();
+                GameObject bullet = Instantiate(Bullet, BulletSpawn.position, BulletSpawn.rotation);
                 RpcFlash();
+                NetworkServer.Spawn(bullet);
                 ammolocal--;
             }
             if (ammolocal == 0)
             {
-                source.PlayOneShot(MachinegunSoundR, 1F);
+                mysound = MachinegunSound;
+                RpcPlaysound(1F);
                 RpcNoammo();
             }
         }
@@ -340,16 +343,23 @@ public class MPlayerController : NetworkBehaviour
         flash.Play();
         if (MWeaponNameController.weaponname == "Mpistol" || MWeaponNameController.weaponname == "Mpistol(Clone)")
         {
-            source.PlayOneShot(HandgunSound, 1F);
+            mysound = HandgunSound;
+            RpcPlaysound(1F);
         }
         else if (MWeaponNameController.weaponname == "Mmachinegun" || MWeaponNameController.weaponname == "Mmachinegun(Clone)")
         {
-            source.PlayOneShot(MachinegunSound, 1F);
+            mysound = MachinegunSound;
+            RpcPlaysound(1F);
         }
     }
     [ClientRpc]
     void RpcNoammo()
     {
         crosshair.GetComponent<MCrosshairManager>().Noammo();
+    }
+    [ClientRpc]
+    void RpcPlaysound(float vol)
+    {
+        source.PlayOneShot(mysound, vol);
     }
 }
