@@ -6,7 +6,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using UnityEngine.UI;
-
+using UnityEngine.Networking;
 public class FirebaseController : MonoBehaviour
 {
 	private DatabaseReference reference;
@@ -17,22 +17,29 @@ public class FirebaseController : MonoBehaviour
     int iter = 0;
 	public Text Name0, Name1, Name2;
 	public Text Score0, Score1, Score2;
+    public GameObject btnSave;
+    public GameObject btnLoad;
 
 	void Start()
 	{
-		// ใช้สำหรับอ้างอิง Firebase Project
-		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://forest-e5661.firebaseio.com/");
-
+        // ใช้สำหรับอ้างอิง Firebase Project
+        #if UNITY_EDITOR
+        FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://forest-e5661.firebaseio.com/");
+        #else
+            FirebaseApp.DefaultInstance.Options.DatabaseUrl = new System.Uri("https://forest-e5661.firebaseio.com/");
+        #endif
 		// สำหรับใช้ในการอ้างอิง Firebase
 		reference = FirebaseDatabase.DefaultInstance.RootReference;
         for(int i=0; i<score.Length;i++)
         {
             score[i] = -1;
         }
+        iter = 0;
 	}
 
-	public void WriteToniData()
+	public void RpcWriteToniData()
 	{
+
 		// ทำการเขียนเขียนข้อมูลว่างๆ เพื่อนำ Key มาอ้างอิง และทำการ Update ข้อมูล
 		string key = reference.Child("toni-test").Push().Key;
 		Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
@@ -40,15 +47,18 @@ public class FirebaseController : MonoBehaviour
 		HunterData tData = new HunterData();
 		tData.body = MScoreManager.Score;
 		tData.uid = _Email.text;
-		//tData.body = _Password.text;
-		//tData.uid = _Email.text;
+
 		string json = JsonUtility.ToJson(tData);
-		// เขียนข้อมูลลง Firebase
-		reference.Child("toni-test").Child(key).SetRawJsonValueAsync(json);
+        gameObject.SetActive(false);
 
-	}
+        reference.Child("toni-test").Child(key).SetRawJsonValueAsync(json);
+        RpcRaadAllData();
+        btnSave.SetActive(false);
+                
 
-	public void RaadAllData()
+    }
+
+	public void RpcRaadAllData()
 	{
 		FirebaseDatabase.DefaultInstance.GetReference("toni-test")
 		// หากข้อมูลมีการเปลี่ยนแหลงให้ทำการอ่านและแสดง
@@ -81,7 +91,7 @@ public class FirebaseController : MonoBehaviour
         score[iter] = u.body;
         iter++;
     }
-    void Bubblesort()
+    public void Bubblesort()
     {
 
         string strtemp = "";
@@ -122,5 +132,9 @@ public class FirebaseController : MonoBehaviour
 				Score2.text = score [i].ToString();
 			}
         }
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
