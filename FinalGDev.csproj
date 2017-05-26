@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -155,9 +157,7 @@
     <Compile Include="Assets\M\MScript\MSliderManager.cs" />
     <Compile Include="Assets\M\MScript\MSpawnUnitStep.cs" />
     <Compile Include="Assets\M\MScript\MTakeitem.cs" />
-    <Compile Include="Assets\M\MScript\MWeaponController.cs" />
     <Compile Include="Assets\M\MScript\MWeaponNameController.cs" />
-    <Compile Include="Assets\M\MScript\MeleeSystem.cs" />
     <Compile Include="Assets\M\MScript\Mpause_menu.cs" />
     <Compile Include="Assets\Model\Standard Assets\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Model\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />

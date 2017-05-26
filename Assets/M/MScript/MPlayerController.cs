@@ -22,7 +22,6 @@ public class MPlayerController : NetworkBehaviour
     float mouseInputX, mouseInputY;
     [SyncVar]public int PlayerHealth = 100;
     public static bool dying = false;
-    public MWeaponController WeaponControl;
     public MWeaponNameController WeaponNameControl;
     public Camera Tps;
     public Camera Fps;
@@ -256,7 +255,6 @@ public class MPlayerController : NetworkBehaviour
         {
             soundEffect.PlayOneShot(Splayerdeath, 1.5f);
         }
-        //healthSlider.value = PlayerHealth;
         gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
         if (PlayerHealth == 0) 
@@ -266,6 +264,7 @@ public class MPlayerController : NetworkBehaviour
             dying = true;
             crosshair.GetComponent<MCrosshairManager>().DEATH();
             gameObject.tag = "Death";
+            
         }
 
     }

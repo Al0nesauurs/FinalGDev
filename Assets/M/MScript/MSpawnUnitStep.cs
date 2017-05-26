@@ -13,8 +13,6 @@ public class MSpawnUnitStep : NetworkBehaviour {
     public GameObject MachineGun;
     public GameObject Boss;
     public Transform BossSpawnlocation;
-    bool spawnMachine = true;
-    bool spawnBoss = true;
     bool ending = false;
 
     int myrandom,bossrandom;

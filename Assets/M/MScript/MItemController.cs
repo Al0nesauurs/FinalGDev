@@ -15,9 +15,7 @@ public class MItemController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        t += Time.deltaTime;
-        if (t > 10)
-            Destroy(gameObject);
+        Destroy(gameObject,10);
     }
     public void HpController(int damage)
     {

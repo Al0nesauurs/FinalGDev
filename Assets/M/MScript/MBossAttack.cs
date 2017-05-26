@@ -56,26 +56,18 @@ public class MBossAttack : MonoBehaviour {
 
     void Update()
     {
-        // Add the time since Update was last called to the timer.
         timer += Time.deltaTime;
-
-        // If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
         if (timer >= timeBetweenAttacks && playerInRange && bossctrl.hp > 0)
         {
-            // ... attack.
             Attack();
         }
     }
 
     void Attack()
     {
-        // Reset the timer.
         timer = 0f;
-
-        // If the player has health to lose...
         if (!MPlayerController.dying)
         {
-            // ... damage the player.
             myobject.GetComponent<MPlayerController>().TakeDamage(attackDamage);
         }
     }

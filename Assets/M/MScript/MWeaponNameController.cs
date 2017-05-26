@@ -27,14 +27,12 @@ public class MWeaponNameController : MonoBehaviour
             {
                 crosshair.GetComponent<MCrosshairManager>().initGun();
                 myNew = Instantiate(Pistol, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y-0.06f, gameObject.transform.position.z), gameObject.transform.rotation);
-                MWeaponController.ammo = 0;
                 MBulletmove.power = 10;
             }
             else if (weaponname == "Mmachinegun" || weaponname == "Mmachinegun(Clone)")
              {
                 crosshair.GetComponent<MCrosshairManager>().initGun();
                 myNew = Instantiate(MachineGun, gameObject.transform.position, gameObject.transform.rotation);
-                MWeaponController.ammo = 0;
                 MBulletmove.power = 20;
             }
             Debug.Log("Add Weapon" + weaponname);

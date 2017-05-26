@@ -134,28 +134,22 @@ public class MLionController : NetworkBehaviour
         int layerMask = 1 << 10;
         layerMask = ~layerMask;
         if (Physics.Raycast(transform.position, rayDirection, out hit, 7, layerMask))
-        { // If the player is very close behind the player and in view the enemy will detect the player
-          //Debug.Log(hit.transform.name);
+        { 
             if (hit.transform.tag == "Player")
             {
-                //Debug.Log("Close");
                 return true;
             }
         }
         if ((Vector3.Angle(rayDirection, transform.forward)) <= fieldOfViewRange)
         {
-            // Detect if player is within the field of view
             if (Physics.Raycast(transform.position, rayDirection, out hit, 20, layerMask))
             {
-                //Debug.Log((Vector3.Angle(rayDirection, transform.forward)));
                 if (hit.transform.tag == "Player")
                 {
-                    //Debug.Log("Can see player");
                     return true;
                 }
                 else
                 {
-                    //Debug.Log("Can not see player");
                     return false;
                 }
             }
