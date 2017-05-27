@@ -107,7 +107,7 @@ public class MPlayerController : NetworkBehaviour
                 if (timetofirebase >= 10)
                 {
                     timetofirebase = 0;
-                    SceneManager.LoadScene("HuntFirebase");
+                   // SceneManager.LoadScene("HuntFirebase");
                 }
             }
             healthbar = PlayerHealth;
