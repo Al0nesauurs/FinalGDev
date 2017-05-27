@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 
 public class MPlayerController : NetworkBehaviour
@@ -58,6 +59,7 @@ public class MPlayerController : NetworkBehaviour
     public GameObject crosshair;
     public GameObject mySlider;
     public static int healthbar = 100;
+    float timetofirebase = 0;
     //END PORT
 
     void Start()
@@ -98,6 +100,15 @@ public class MPlayerController : NetworkBehaviour
             {
                 KeyboardControl();
                 MouseControl();
+            }
+            else
+            {
+                timetofirebase += Time.deltaTime;
+                if (timetofirebase >= 10)
+                {
+                    timetofirebase = 0;
+                    SceneManager.LoadScene("HuntFirebase");
+                }
             }
             healthbar = PlayerHealth;
             UIControl();
@@ -264,7 +275,7 @@ public class MPlayerController : NetworkBehaviour
             dying = true;
             crosshair.GetComponent<MCrosshairManager>().DEATH();
             gameObject.tag = "Death";
-            
+
         }
 
     }

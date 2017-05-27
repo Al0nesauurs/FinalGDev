@@ -17,7 +17,7 @@ public class MSlaveSpawn : MonoBehaviour {
         }
         else
         {
-            MSlaveSpawn.start = false;
+            start = false;
         }
     }
 }
