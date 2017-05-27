@@ -174,7 +174,13 @@ public class MLionController : NetworkBehaviour
                 distance = curDistance;
             }
         }
-        return closest;
+        if (closest == null)
+            return null;
+        else if (closest.tag != null)
+            return closest;
+        else
+            return null;
+
     }
 
 }
