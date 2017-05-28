@@ -21,4 +21,8 @@ public class Menu_Button : MonoBehaviour {
     {
         SceneManager.LoadScene("HuntFirebase");
     }
+    public void LoadSelectChar()
+    {
+        SceneManager.LoadScene("CharacterSelect");
+    }
 }

@@ -33,6 +33,13 @@ public class PlayerController : MonoBehaviour
     public AudioClip Splayerdeath;
     public static bool Cantakeitem = true;
 
+    public static int selectchar = 0;
+    public GameObject Char1;
+    public GameObject Char2;
+    public GameObject Char3;
+    public GameObject Char4;
+    public GameObject Char5;
+
 
 
     void Start()
@@ -51,6 +58,28 @@ public class PlayerController : MonoBehaviour
 		Cantakeitem = true;
         distToGround = GameObject.Find("LegRight").GetComponent<Collider>().bounds.extents.y;
         GameObject.Find("Crosshair").GetComponent<Canvas>().enabled = false;
+        GameObject myNew = null;
+        if (selectchar == 1)
+        {
+            myNew = Instantiate(Char1, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 2)
+        {
+            myNew = Instantiate(Char2, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 3)
+        {
+            myNew = Instantiate(Char3, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 4)
+        {
+            myNew = Instantiate(Char4, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 5)
+        {
+            myNew = Instantiate(Char5, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        myNew.transform.parent = gameObject.transform;
 
     }
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

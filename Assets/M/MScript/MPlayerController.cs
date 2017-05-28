@@ -18,23 +18,24 @@ public class MPlayerController : NetworkBehaviour
     private float distToGround;
     public float force = 5;
     public float MouseSpeed = 3;
-	public float WaitTime =3;
+    public float WaitTime = 3;
     private float ReloadTime = 0;
     float mouseInputX, mouseInputY;
-    [SyncVar]public int PlayerHealth = 100;
+    [SyncVar]
+    public int PlayerHealth = 100;
     public static bool dying = false;
     public MWeaponNameController WeaponNameControl;
     public Camera Tps;
     public Camera Fps;
-	public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
-	private double timer = 1.0;
-	public AudioSource pause;
-	public AudioSource normalsound;
-	AudioSource soundEffect;
-	public AudioClip Splayerhurt;
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    private double timer = 1.0;
+    public AudioSource pause;
+    public AudioSource normalsound;
+    AudioSource soundEffect;
+    public AudioClip Splayerhurt;
     public AudioClip Splayerdeath;
-	public static bool Cantakeitem = true;
-    public int ammolocal=0;
+    public static bool Cantakeitem = true;
+    public int ammolocal = 0;
     public GameObject HpUI;
 
 
@@ -61,27 +62,55 @@ public class MPlayerController : NetworkBehaviour
     public static int healthbar = 100;
     float timetofirebase = 0;
     //END PORT
+    public static int selectchar = 0;
+    public GameObject Char1;
+    public GameObject Char2;
+    public GameObject Char3;
+    public GameObject Char4;
+    public GameObject Char5;
 
     void Start()
     {
+
         source = GetComponent<AudioSource>();
         Cursor.visible = false;
         CanWalk = true;
         CanJump = true;
-        usingitem = false; 
+        usingitem = false;
         CursorResume = false;
         canrightclick = true;
         Time.timeScale = 1;
-		soundEffect = GetComponent<AudioSource>();
+        soundEffect = GetComponent<AudioSource>();
         PlayerHealth = 100;
         Tps.enabled = true;
         Fps.enabled = false;
-		Cantakeitem = true;
+        Cantakeitem = true;
         distToGround = GameObject.Find("LegRight").GetComponent<Collider>().bounds.extents.y;
         gameObject.GetComponentInChildren<Canvas>().enabled = false;
-
+        GameObject myNew = null;
+        if (selectchar == 1)
+        {
+            myNew = Instantiate(Char1, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 2)
+        {
+            myNew = Instantiate(Char2, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 3)
+        {
+            myNew = Instantiate(Char3, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 4)
+        {
+            myNew = Instantiate(Char4, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        else if (selectchar == 5)
+        {
+            myNew = Instantiate(Char5, gameObject.transform.position, gameObject.transform.rotation);
+        }
+        myNew.transform.parent = gameObject.transform;
     }
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     void Update()
     {
         CheckIfLocal();
@@ -107,7 +136,7 @@ public class MPlayerController : NetworkBehaviour
                 if (timetofirebase >= 10)
                 {
                     timetofirebase = 0;
-                   // SceneManager.LoadScene("HuntFirebase");
+                    // SceneManager.LoadScene("HuntFirebase");
                 }
             }
             healthbar = PlayerHealth;
@@ -131,51 +160,51 @@ public class MPlayerController : NetworkBehaviour
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void MouseControl()
-	{
-		mouseInputY += Input.GetAxis("Mouse X") * MouseSpeed * Time.deltaTime * 20;
-		mouseInputX -= Input.GetAxis("Mouse Y") * MouseSpeed * Time.deltaTime * 20;
-		mouseInputX = Mathf.Clamp(mouseInputX, -80, 45);
-		gameObject.transform.rotation = Quaternion.Euler(mouseInputX, mouseInputY, 0);
-		if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == false)
-		{
+    {
+        mouseInputY += Input.GetAxis("Mouse X") * MouseSpeed * Time.deltaTime * 20;
+        mouseInputX -= Input.GetAxis("Mouse Y") * MouseSpeed * Time.deltaTime * 20;
+        mouseInputX = Mathf.Clamp(mouseInputX, -80, 45);
+        gameObject.transform.rotation = Quaternion.Euler(mouseInputX, mouseInputY, 0);
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == false)
+        {
             gameObject.GetComponentInChildren<Canvas>().enabled = false;
-			Tps.enabled = true;
-			Fps.enabled = false;
-		}
-		else if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == true)
-		{
+            Tps.enabled = true;
+            Fps.enabled = false;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0 || Input.GetKeyDown(KeyCode.Z) && Tps.enabled == true)
+        {
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
-			Tps.enabled = false;
-			Fps.enabled = true;
-		}
-		if (Input.GetKeyDown(KeyCode.Mouse0)&&Time.timeScale == 1)
-		{
+            Tps.enabled = false;
+            Fps.enabled = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.timeScale == 1)
+        {
             Debug.Log("SHOOTING");
             CmdCheckWeapon();
 
         }
 
-	}
+    }
 
     public void KeyboardControl()
-	{
-		CanJump = IsGrounded();
-		if (Input.GetAxis("Horizontal") != 0 && CanWalk)
-		{
-			transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * 1f * force);
-		}
+    {
+        CanJump = IsGrounded();
+        if (Input.GetAxis("Horizontal") != 0 && CanWalk)
+        {
+            transform.Translate(Input.GetAxis("Horizontal") * Vector3.right * Time.deltaTime * 1f * force);
+        }
 
-		if (Input.GetAxis("Vertical") != 0 && CanWalk)
-		{
-			transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 1f * force);
-		}
+        if (Input.GetAxis("Vertical") != 0 && CanWalk)
+        {
+            transform.Translate(Input.GetAxis("Vertical") * Vector3.forward * Time.deltaTime * 1f * force);
+        }
 
-		if (Input.GetKeyDown(KeyCode.Space) && CanJump && Time.timeScale == 1)
-		{
-			gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 2000));
-		}
+        if (Input.GetKeyDown(KeyCode.Space) && CanJump && Time.timeScale == 1)
+        {
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 2000));
+        }
 
-		/*if (Input.GetKeyDown(KeyCode.I))
+        /*if (Input.GetKeyDown(KeyCode.I))
 		{
 			if (MWeaponNameController.weaponname != "hand")
 			{
@@ -200,76 +229,77 @@ public class MPlayerController : NetworkBehaviour
 			}
 
 		}*/
-		if (Input.GetKeyDown(KeyCode.R) && MWeaponNameController.weaponname != "hand")
-		{
+        if (Input.GetKeyDown(KeyCode.R) && MWeaponNameController.weaponname != "hand")
+        {
             Reloading = true;
             ammolocal = 0;
             crosshair.GetComponent<MCrosshairManager>().Reload();
-		}
+        }
 
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Application.Quit();
-		}
-	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	public void UIControl()
-	{
-		timer -= Time.deltaTime;
-		if (timer <= 0) 
-		{
-			if (timer <= -0.5) 
-			{
-				timer = 0.5;
-			}
-			if (PlayerHealth < 50) 
-			{
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void UIControl()
+    {
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            if (timer <= -0.5)
+            {
+                timer = 0.5;
+            }
+            if (PlayerHealth < 50)
+            {
                 GameObject.Find("Heart").GetComponent<Canvas>().enabled = false;
             }
-        } 
-		else if (timer > 0) 
-		{
+        }
+        else if (timer > 0)
+        {
             GameObject.Find("Heart").GetComponent<Canvas>().enabled = true;
         }
 
         if (PlayerHealth <= 0)
-		{
-            Cursor.visible = enabled; 
+        {
+            Cursor.visible = enabled;
             GameObject.Find("PauseMenu").GetComponent<Canvas>().enabled = true;
 
-		}
-	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public void CheckTakeItem()
-	{
-		if (Cantakeitem == false) {
-			WaitTime -= Time.deltaTime;
-			if (WaitTime < 0) 
-			{
-				MPlayerController.Cantakeitem = true;
-				WaitTime = 3;
-			}
-		}
-	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void CheckTakeItem()
+    {
+        if (Cantakeitem == false)
+        {
+            WaitTime -= Time.deltaTime;
+            if (WaitTime < 0)
+            {
+                MPlayerController.Cantakeitem = true;
+                WaitTime = 3;
+            }
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public void TakeDamage(int damage)
     {
         PlayerHealth -= damage;
         healthbar = PlayerHealth;
-		if (PlayerHealth > 0) 
-		{
-			soundEffect.PlayOneShot (Splayerhurt,1.5f );
-		}
-        else if(PlayerHealth==0)
+        if (PlayerHealth > 0)
+        {
+            soundEffect.PlayOneShot(Splayerhurt, 1.5f);
+        }
+        else if (PlayerHealth == 0)
         {
             soundEffect.PlayOneShot(Splayerdeath, 1.5f);
         }
         gameObject.GetComponentInChildren<Slider>().value = PlayerHealth;
         Debug.Log("DAMAGE! " + damage + "now player health = " + PlayerHealth);
-        if (PlayerHealth == 0) 
-		{
+        if (PlayerHealth == 0)
+        {
             gameObject.transform.rotation = Quaternion.Euler(-90, gameObject.transform.rotation.y, 0);
             gameObject.GetComponentInChildren<Canvas>().enabled = true;
             dying = true;
@@ -279,7 +309,7 @@ public class MPlayerController : NetworkBehaviour
         }
 
     }
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     bool IsGrounded()
     {
@@ -299,7 +329,7 @@ public class MPlayerController : NetworkBehaviour
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   [Command]
+    [Command]
     public void CmdCheckWeapon()
     {
         Debug.Log("CheckWEapon" + MWeaponNameController.weaponname);
@@ -317,7 +347,7 @@ public class MPlayerController : NetworkBehaviour
                 RpcHaveammo();
                 ammolocal--;
             }
-            else 
+            else
             {
                 RpcNoammo();
             }
