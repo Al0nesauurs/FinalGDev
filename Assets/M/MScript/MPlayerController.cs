@@ -87,21 +87,12 @@ public class MPlayerController : NetworkBehaviour
         Cantakeitem = true;
         distToGround = GameObject.Find("LegRight").GetComponent<Collider>().bounds.extents.y;
         gameObject.GetComponentInChildren<Canvas>().enabled = false;
-<<<<<<< HEAD
-        GameObject myNew = null;
-        if (selectchar == 1)
-        {
-            myNew = Instantiate(Char1, gameObject.transform.position, gameObject.transform.rotation);
-        }
-        else if (selectchar == 2)
-=======
         GameObject myNew=null;
         if (selectchar==1)
         {
             myNew = Instantiate(Char1, gameObject.transform.position, gameObject.transform.rotation);
         }
         else if(selectchar==2)
->>>>>>> origin/master
         {
             myNew = Instantiate(Char2, gameObject.transform.position, gameObject.transform.rotation);
         }

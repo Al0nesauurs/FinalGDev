@@ -29,50 +29,42 @@ Platform assembly: C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the 
 Loading C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Unity.Compat.dll into Unity Child Domain
 Platform assembly: C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Unity.Tasks.dll (this message is harmless)
 Loading C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the ancient_Data\Managed\Unity.Tasks.dll into Unity Child Domain
-- Completed reload, in  0.326 seconds
+- Completed reload, in  3.885 seconds
 Platform assembly: C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\pc1\Downloads\Work\Unity\FinalGDev\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.310329 ms
+UnloadTime: 1.633635 ms
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: e18 -> priority: 1 
-  Thread -> id: 1118 -> priority: 1 
-  Thread -> id: 33d0 -> priority: 1 
-  Thread -> id: 4818 -> priority: 1 
+  Thread -> id: 3ad0 -> priority: 1 
+  Thread -> id: 4ce4 -> priority: 1 
+  Thread -> id: 988 -> priority: 1 
+  Thread -> id: 36a0 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.613376 ms
+UnloadTime: 7.762761 ms
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 899.
-Total: 0.396006 ms (FindLiveObjects: 0.044903 ms CreateObjectMapping: 0.022237 ms MarkObjects: 0.324161 ms  DeleteObjects: 0.003848 ms)
+Total: 0.515749 ms (FindLiveObjects: 0.062009 ms CreateObjectMapping: 0.026942 ms MarkObjects: 0.420383 ms  DeleteObjects: 0.004704 ms)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.732570 ms
+UnloadTime: 2.831064 ms
 
 Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 551.
-Total: 0.409691 ms (FindLiveObjects: 0.030363 ms CreateObjectMapping: 0.019244 ms MarkObjects: 0.276264 ms  DeleteObjects: 0.082537 ms)
+Total: 1.335561 ms (FindLiveObjects: 0.106913 ms CreateObjectMapping: 0.065430 ms MarkObjects: 0.885242 ms  DeleteObjects: 0.276691 ms)
 
-The referenced script on this Behaviour (Game Object 'Mmachinegun') is missing!
- 
-(Filename:  Line: 1743)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.652171 ms
 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.662434 ms
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 2090.
+Total: 1.120023 ms (FindLiveObjects: 0.129578 ms CreateObjectMapping: 0.053884 ms MarkObjects: 0.663290 ms  DeleteObjects: 0.271987 ms)
 
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 2010.
-Total: 1.028506 ms (FindLiveObjects: 0.098787 ms CreateObjectMapping: 0.059443 ms MarkObjects: 0.636348 ms  DeleteObjects: 0.233498 ms)
-
-myrandom = 0 bossrandom = 42
+stage= 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Add WeaponMpistol
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Add WeaponMpistol
+Add WeaponLpistol
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
